@@ -1,1 +1,0 @@
-controller_joint_names: ['', 'left_diff_jnt', 'left_rear_lin_jnt', 'left_rear_rev_jnt', 'front_left_lin_jnt', 'left_front_rev_jnt', 'right_diff_jnt', 'right_rear_lin_jnt', 'right_rear_rev_jnt', 'right_front_lin_jnt', 'right_front_wheel_jnt', ]
