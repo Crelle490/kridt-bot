@@ -7,7 +7,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://kridtbot/meshes/base_link.stl" />
+        <mesh filename="file://$(find kridtbot)/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
