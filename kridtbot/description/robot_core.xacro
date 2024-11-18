@@ -2,43 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <link
     name="base_link">
-    <!-- <inertial> 
-      <origin
-        xyz="-0.00062572 0.0029573 -0.11694"
-        rpy="0 0 0" />
-      <mass
-        value="3.8611" />
-      <inertia
-        ixx="0.1509"
-        ixy="-3.2679E-16"
-        ixz="-3.3043E-17"
-        iyy="0.14248"
-        iyz="-0.0045004"
-        izz="0.19616" />
-    </inertial> -->
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://kridtbot/meshes/base_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.98824 0.73725 0.51765 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <!-- <mesh
-          filename="package://kridtbot/meshes/base_link.STL" /> -->
-        <box size="0.5 0.5 0.5"/>
-      </geometry>
-    </collision>
+
   </link>
 
   <link
