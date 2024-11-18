@@ -1,3 +1,3 @@
 # kridt-bot
-Repo for KridtBot rover.
+Repo for KridtBot rover.rg
 
