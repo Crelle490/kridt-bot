@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- BASE LINK-->
+
+  
+  <!-- ________BASE LINK___________-->
 
   <link name="base_link">
 
@@ -13,8 +15,11 @@
     <child link="chassis_link"/>
   </joint>
 
-  <!-- CHASSIS LINK-->
+
+
+  <!-- _____________CHASSIS LINK_____________-->
   <link name="chassis_link">
+
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -31,8 +36,10 @@
   </joint>
 
 
-  <!-- DIFF LINK-->
+
+  <!-- _____________DIFF LINK____________-->
   <link name="diff_link">
+
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
