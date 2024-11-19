@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <link
+  <link
     name="base_link">
     <visual>
       <origin
@@ -16,6 +16,6 @@
           rgba="0.98824 0.73725 0.51765 1" />
       </material>
     </visual>
-   </link>
+  </link>
   
 </robot> 
