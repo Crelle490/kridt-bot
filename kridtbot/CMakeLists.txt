@@ -34,7 +34,7 @@ endif()
 
 install(
   DIRECTORY config description launch worlds meshes
-  DESTINATION share/${PROJECT_NAME}
+  DESTINATION ${PROJECT_NAME}
 )
 
 ament_package()
