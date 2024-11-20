@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+<material name="orange">
+  <color rgba="${252/255} ${188/255} ${132/255} 1" /> 
+</materia>
 
+<material name="black">
+  <color rgba="${64/255} ${64/255} ${64/255} 1" /> 
+</materia>
   
   <!-- ________BASE LINK___________-->
 
@@ -25,7 +31,9 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/base_link.STL"/>
       </geometry>
+      <material name="orange"\>
     </visual>
+
 
   </link> 
 
@@ -46,6 +54,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/diff_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
   
   </link>
@@ -67,6 +76,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/left_diff_link.STL"/>
       </geometry>
+      <material name = "orange"\>
     </visual>
 
   </link>
@@ -88,6 +98,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/left_rear_lin_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -104,10 +115,11 @@
   <link name="left_rear_rev_link">
 
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0.06266" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:$(find kridtbot)/meshes/left_rear_rev_link.STL"/>
+        <cylinder radius="0.0865" length="0.05234"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -127,8 +139,9 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:$(find kridtbot)/meshes/left_front_lin_link.STL"/>
+        <mesh filename="file:$(find kridtbot)/meshes/front_left_lin_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -145,12 +158,121 @@
   <link name="left_front_rev_link">
 
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0.06266" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:$(find kridtbot)/meshes/left_front_rev_link.STL"/>
+        <cylinder radius="0.0865" length="0.05234"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
+
+    <!-- _____________DIFF TO RIGHT DIFF JOINT____________-->
+    <joint name="diff_to_right_diff" type="revolute">
+      <origin xyz="0 0 0.28" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="1000" lower="-1.5708" upper="1.5708" velocity="10"/>
+      <parent link="diff_link"/>
+      <child link="right_diff_link"/>
+    </joint>
+  
+    <!-- _____________RIGHT DIFF LINK____________-->
+    <link name="right_diff_link">
+  
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file:$(find kridtbot)/meshes/rigth_diff_link.STL"/>
+        </geometry>
+        <material name = "orange"\>
+      </visual>
+  
+    </link>
+  
+    <!-- _____________RIGHT DIFF TO RIGHT REAR LIN JOINT____________-->
+    <joint name="right_diff_to_right_rear_lin" type="prismatic">
+      <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
+      <origin xyz="-0.216 -0.0010724 0" rpy="-1.5708 0 0.0049647"/>
+      <axis xyz="0 0 1"/>
+      <parent link="right_diff_link"/>
+      <child link="right_rear_lin_link"/>
+    </joint>
+  
+    <!-- _____________RIGHT REAR LIN LINK____________-->
+    <link name="right_rear_lin_link">
+  
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file:$(find kridtbot)/meshes/right_rear_lin_link.STL"/>
+        </geometry>
+        <material name = "black"\>
+      </visual>
+  
+    </link>
+  
+  <!-- _____________RIGHT REAR LIN TO RIGHT REAR REV JOINT____________-->
+    <joint name="right_rear_lin_to_right_rear_rev" type="continuous">
+      <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="right_rear_lin_link"/>
+      <child link="right_rear_rev_link"/>
+    </joint>
+  
+    <!-- _____________RIGHT REAR REV LINK____________-->
+    <link name="right_rear_rev_link">
+  
+      <visual>
+        <origin xyz="0 0 0.06266" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0865" length="0.05234"/>
+        </geometry>
+        <material name = "black"\>
+      </visual>
+  
+    </link>
+  
+      <!-- _____________RIGHT DIFF TO RIGHT FRONT LIN JOINT____________-->
+    <joint name="right_diff_to_right_front_lin" type="prismatic">
+      <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
+      <origin xyz="0.216 0.0010724 0" rpy="-1.5708 0 0.0049647"/>
+      <axis xyz="0 0 1"/>
+      <parent link="right_diff_link"/>
+      <child link="right_front_lin_link"/>
+    </joint>
+  
+    <!-- _____________RIGHT FRONT LIN LINK____________-->
+    <link name="right_front_lin_link">
+  
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="file:$(find kridtbot)/meshes/right_front_lin_link.STL"/>
+        </geometry>
+        <material name = "black"\>
+      </visual>
+  
+    </link>
+  
+  <!-- _____________RIGHT FRONT LIN TO RIGHT FRONT REV JOINT____________-->
+    <joint name="right_front_lin_to_right_front_rev" type="continuous">
+      <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="right_front_lin_link"/>
+      <child link="right_front_rev_link"/>
+    </joint>
+  
+    <!-- _____________RIGHT FRONT REV LINK____________-->
+    <link name="right_front_rev_link">
+  
+      <visual>
+        <origin xyz="0 0 0.06266" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0865" length="0.05234"/>
+        </geometry>
+        <material name = "black"\>
+      </visual>
+  
+    </link>
 
 </robot>
