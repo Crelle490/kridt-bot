@@ -47,8 +47,8 @@
     </collision>
 
     <inertial>
-      <mass value="11061"/>
-      <inertia ixx="" ixy="" ixz="" iyy="" iyz="" izz=""/>
+      <mass value="11.18100"/>
+      <inertia ixx="0.52" ixy=" 0.00" ixz="0.00" iyy="0.48" iyz=" 0.04" izz="0.60"/>
     </inertial>
 
   </link> 
@@ -72,6 +72,11 @@
       </geometry>
       <material name = "black"/>
     </visual>
+
+    <inertial>
+      <mass value="1.44"/>
+      <inertia ixx="2024193.31e-9" ixy="258.53e-9" ixz="-42.56e-9" iyy="1553917.67e-9" iyz=" 559.93e-9" izz="1298088.14e-9"/>
+    </inertial>
   
   </link>
 
@@ -103,6 +108,11 @@
       <material name="mesh_color"/>
     </collision>
 
+    <inertial>
+      <mass value="7.30200"/>
+      <inertia ixx="133810302.00e-9" ixy="35430.13e-9" ixz="356.93e-9" iyy="282054578.10e-9" iyz="-2296.44e-9" izz="397598064.18e-9"/>
+    </inertial>
+
   </link>
 
   <!-- _____________LEFT DIFF TO LEFT REAR LIN JOINT____________-->
@@ -133,6 +143,11 @@
       <material name="mesh_color"/>
     </collision>
 
+    <inertial>
+      <mass value="1.04456"/>
+      <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
+    </inertial>
+
   </link>
 
 <!-- _____________LEFT REAR LIN TO LEFT REAR REV JOINT____________-->
@@ -161,6 +176,11 @@
       </geometry>
       <material name="mesh_color"/>
     </collision>
+
+    <inertial>
+      <mass value="1.01100"/>
+      <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
+    </inertial>
 
 
   </link>
@@ -193,6 +213,11 @@
       <material name="mesh_color"/>
     </collision>
 
+    <inertial>
+      <mass value="1.04456"/>
+      <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
+    </inertial>
+
   </link>
 
 <!-- _____________LEFT FRONT LIN TO LEFT FRONT REV JOINT____________-->
@@ -221,6 +246,11 @@
       </geometry>
       <material name="mesh_color"/>
     </collision>
+  
+    <inertial>
+      <mass value="1.01100"/>
+      <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
+    </inertial>
 
 
   </link>
@@ -252,6 +282,11 @@
         </geometry>
         <material name="mesh_color"/>
       </collision>
+
+    <inertial>
+      <mass value="7.30200"/>
+      <inertia ixx="133810688.94e-9" ixy="319399.82e-9" ixz="2255.98e-9" iyy="282053860.06e-9" iyz="-558.22e-9" izz="397597733.07e-9"/>
+    </inertial>
   
   
     </link>
@@ -283,6 +318,11 @@
         </geometry>
         <material name="mesh_color"/>
       </collision>
+
+    <inertial>
+      <mass value="1.04456"/>
+      <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
+    </inertial>
   
     </link>
   
@@ -312,6 +352,11 @@
         </geometry>
         <material name="mesh_color"/>
       </collision>
+    
+    <inertial>
+      <mass value="1.01100"/>
+      <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
+    </inertial>
   
     </link>
   
@@ -342,6 +387,11 @@
         </geometry>
         <material name="mesh_color"/>
       </collision>
+
+    <inertial>
+      <mass value="1.04456"/>
+      <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
+    </inertial>
   
     </link>
   
@@ -371,6 +421,11 @@
         </geometry>
         <material name="mesh_color"/>
       </collision>
+
+    <inertial>
+      <mass value="1.01100"/>
+      <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
+    </inertial>
   
   
     </link>
