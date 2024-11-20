@@ -28,7 +28,8 @@
     </visual>
 
   </link> 
-
+  
+    <!-- _____________BASE TO CHASSIS JOINT____________-->
   <joint name="chassis_to_diff" type="fixed">
     <origin xyz="-0.00062572 0.016893 -0.01406" rpy="1.5708 0 -1.5708"/>
     <parent link="chassis_link"/>
@@ -49,13 +50,13 @@
   
   </link>
 
+  <!-- _____________DIFF TO LEFT DIFF JOINT____________-->
   <joint name="diff_to_left_diff" type="revolute">
     <origin xyz="0 0 -0.28" rpy="-3.1416 0 -3.1416"/>
-    <axis xyz="0 0 1"/>
-    <limit effort="1000" lower="-1.5708" upper="1.5708" velocity="0.5"/>
     <parent link="diff_link"/>
     <child link="left_diff_link"/>
   </joint>
+
   <!-- _____________LEFT DIFF LINK____________-->
   <link name="left_diff_link">
 
@@ -65,6 +66,32 @@
         <mesh filename="file:$(find kridtbot)/meshes/left_diff_link.STL"/>
       </geometry>
     </visual>
-  
+
   </link>
+
+  <!-- _____________LEFT DIFF TO LEFT REAR LIN JOINT____________-->
+  <joint name="diff_to_left_diff" type="revolute">
+    <origin xyz="-0.216 -0.0010724 0" rpy="1.5708 0 0.0049647"/>
+    <parent link="diff_link"/>
+    <child link="left_diff_link"/>
+  </joint>
+
+  <!-- _____________LEFT REAR LIN LINK____________-->
+  <link name="left_diff_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/left_diff_link.STL"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint name="diff_to_left_diff" type="revolute">
+    <origin xyz="-0.216 -0.0010724 0" rpy="1.5708 0 0.0049647"/>
+    <parent link="diff_link"/>
+    <child link="left_diff_link"/>
+  </joint>
+  
 </robot>
