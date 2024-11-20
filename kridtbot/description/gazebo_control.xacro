@@ -16,11 +16,11 @@
             <wheelSeparation>wheelSeparation</wheelSeparation>
             <wheelDiameter>d_wheel</wheelDiameter>
             <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
-            <right_joint>right_rear_lin_to_right_rear_re</right_joint>
+            <right_joint>right_rear_lin_to_right_rear_rev</right_joint>
 
             <!-- Limits -->
-            <max_wheel_torque>10.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
-            <max_acceleration>0.5</max_acceleration> <!-- !!!! CHANGE !!!! -->
+            <max_wheel_torque>100.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
+            <max_acceleration>5</max_acceleration> <!-- !!!! CHANGE !!!! -->
 
             <!-- Odometry -->
             <odometry_frame>odom</odometry_frame>

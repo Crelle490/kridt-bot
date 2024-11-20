@@ -37,8 +37,6 @@ def generate_launch_description():
                 )]),launch_arguments={'world':'empty', 'topic':'robot_description', 'name': 'kridt_bot', 'x': '5.0', 'y': '5.0', 'z': '0.5'}.items()
              )
 
-
-
     # Launch them all!
     return LaunchDescription([
         rsp,
