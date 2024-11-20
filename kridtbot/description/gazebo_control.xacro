@@ -15,8 +15,8 @@
             <!-- Properties-->
             <wheelSeparation>wheelSeparation</wheelSeparation>
             <wheelDiameter>d_wheel</wheelDiameter>
-            <left_joint>left_rear_rev_link</left_joint>
-            <right_joint>right_rear_rev_link</right_joint>
+            <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
+            <right_joint>right_rear_lin_to_right_rear_re</right_joint>
 
             <!-- Limits -->
             <max_wheel_torque>10.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
