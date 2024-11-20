@@ -74,6 +74,7 @@
   <!-- _____________LEFT DIFF TO LEFT REAR LIN JOINT____________-->
   <joint name="left_diff_to_left_rear_lin" type="prismatic">
     <limit effort="1000.0" lower="-0.3" upper="0" velocity="0.5"/>
+    <axis xyz="0 0 1"/>
     <origin xyz="-0.216 -0.0010724 0" rpy="1.5708 0 0.0049647"/>
     <parent link="left_diff_link"/>
     <child link="left_rear_lin_link"/>
@@ -86,6 +87,42 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/left_rear_lin_link.STL"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+<!-- _____________LEFT REAR REV LINK____________-->
+  <link name="left_rear_rev_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/left_rear_rev_link.STL"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <!-- _____________LEFT REAR LIN LINK____________-->
+  <link name="left_front_lin_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/left_front_lin_link.STL"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+<!-- _____________LEFT FRONT REV LINK____________-->
+  <link name="left_front_rev_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/left_front_rev_link.STL"/>
       </geometry>
     </visual>
 
