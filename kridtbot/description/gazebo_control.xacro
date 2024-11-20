@@ -1,7 +1,7 @@
+<?xml version="1.0"?>
 <!-- Description: Gazebo control plugin for the robot -->
 <!-- Inspired from: https://www.youtube.com/watch?v=IjFcr5r0nMs&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=3-->
-
-<?xml version="1.0"?>
+ 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- Variables -->
     <xacro:property name="d_wheel" value="$0.0163" /> <!-- [m] from urdf -->
