@@ -1,3 +1,6 @@
+## Launch three packages to run Gazebo
+## From template: https://github.com/joshnewans/articubot_one/blob/adb08202d3dafeeaf8a3691ddd64aa8551c40f78/launch/launch_sim.launch.py
+
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -13,11 +16,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
-
-    package_name='articubot_one' #<--- CHANGE ME
+    package_name='kridtbot' 
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
