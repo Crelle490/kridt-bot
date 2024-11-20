@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+<material name="orange">
+  <color rgba="${252/255} ${188/255} ${132/255} 1" /> 
+</materia>
 
+<material name="black">
+  <color rgba="${64/255} ${64/255} ${64/255} 1" /> 
+</materia>
   
   <!-- ________BASE LINK___________-->
 
@@ -25,7 +31,9 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/base_link.STL"/>
       </geometry>
+      <material name = "orange"\>
     </visual>
+
 
   </link> 
 
@@ -46,6 +54,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/diff_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
   
   </link>
@@ -67,6 +76,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/left_diff_link.STL"/>
       </geometry>
+      <material name = "orange"\>
     </visual>
 
   </link>
@@ -88,6 +98,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/left_rear_lin_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -108,6 +119,7 @@
       <geometry>
         <cylinder radius="0.0865" length="0.05234"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -129,6 +141,7 @@
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/front_left_lin_link.STL"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -149,6 +162,7 @@
       <geometry>
         <cylinder radius="0.0865" length="0.05234"/>
       </geometry>
+      <material name = "black"\>
     </visual>
 
   </link>
@@ -170,6 +184,7 @@
         <geometry>
           <mesh filename="file:$(find kridtbot)/meshes/rigth_diff_link.STL"/>
         </geometry>
+        <material name = "orange"\>
       </visual>
   
     </link>
@@ -191,6 +206,7 @@
         <geometry>
           <mesh filename="file:$(find kridtbot)/meshes/right_rear_lin_link.STL"/>
         </geometry>
+        <material name = "black"\>
       </visual>
   
     </link>
@@ -211,6 +227,7 @@
         <geometry>
           <cylinder radius="0.0865" length="0.05234"/>
         </geometry>
+        <material name = "black"\>
       </visual>
   
     </link>
@@ -232,6 +249,7 @@
         <geometry>
           <mesh filename="file:$(find kridtbot)/meshes/right_front_lin_link.STL"/>
         </geometry>
+        <material name = "black"\>
       </visual>
   
     </link>
@@ -252,6 +270,7 @@
         <geometry>
           <cylinder radius="0.0865" length="0.05234"/>
         </geometry>
+        <material name = "black"\>
       </visual>
   
     </link>
