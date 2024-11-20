@@ -51,6 +51,11 @@
       <inertia ixx="0.52" ixy=" 0.00" ixz="0.00" iyy="0.48" iyz=" 0.04" izz="0.60"/>
     </inertial>
 
+    <gazebo reference="chassis_link">
+      <material>Gazebo/Orange</material>
+    </gazebo>
+    
+
   </link> 
 
     <!-- _____________BASE TO CHASSIS JOINT____________-->
