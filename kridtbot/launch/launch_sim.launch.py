@@ -27,14 +27,15 @@ def generate_launch_description():
     # Include the Gazebo launch file, provided by the gazebo_ros package
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
+                    get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
+                )]),launch_arguments={'gz_args': 'empty.sdf'}.items()
              )
 
-    # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
-                        output='screen')
+    spawn_entity = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('ros_gz_sim'), 'launch', 'gz_spawn_model.launch.py'
+                )]),launch_arguments={'world':'empty', 'topic':'robot_description', 'name': 'kridt_bot', 'x': '5.0', 'y': '5.0', 'z': '0.5'}.items()
+             )
 
 
 
