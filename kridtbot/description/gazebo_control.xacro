@@ -6,23 +6,18 @@
 
     <!-- Joint State Publisher -->
     <gazebo>
-        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-            <ros>
-                <remapping>~/out:=joint_states</remapping>
-            </ros>
+        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
 
-            <update_rate>100</update_rate>
+            <topic>joint_states</topic>
             <joint_name>left_rear_lin_to_left_rear_rev</joint_name>
             <joint_name>right_rear_lin_to_right_rear_re</joint_name>
 
             <!-- Add the other joints -->
         </plugin>
 
-
     <!-- Gazebo ros2_control plugins-->
     <!-- https://gazebosim.org/docs/harmonic/migrating_gazebo_classic_ros2_packages/ -->
-    <gazebo>
-        <plugin name="gazebo_2w_diff" filename="libgazebo_ros_diff_drive.so">
+        <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDriveSystem">
             
             <!-- Properties-->
             <wheelSeparation>0.068185"</wheelSeparation>  <!-- [m] from SW -->
@@ -31,18 +26,26 @@
             <right_joint>right_rear_lin_to_right_rear_re</right_joint>
 
             <!-- Limits -->
-            <max_wheel_torque>10.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
-            <max_acceleration>0.5</max_acceleration> <!-- !!!! CHANGE !!!! -->
+            <!--<max_wheel_torque>10.0</max_wheel_torque> --><!-- !!!! change in urdf effort limit !!!! -->
+            <max_linear_acceleration>0.5</max_linear acceleration> <!-- !!!! change in urdf !!!! -->
 
             <!-- Output -->
-            <odometry_frame>odom</odometry_frame>
-            <robot_base_frame>base_link</robot_base_frame>
-            <publish_odom>true</publish_odom>
-            <publish_odom_tf>true</publish_odom_tf>
-            <publish_wheel_tf>true</publish_wheel_tf>
+            <cmd_vel_topic>cmd_vel</cmd_vel_topic>
+            <tf_topic>/tf</tf_topic>
+            <odom_topic>odom</odom_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
+            <odom_publisher_frequency>30</odom_publisher_frequency>
+
+            <!--<odometry_frame>odom</odometry_frame>-->
+            <!--<robot_base_frame>base_link</robot_base_frame>-->
+            <!--<publish_odom>true</publish_odom>-->
+            <!--<publish_odom_tf>true</publish_odom_tf>-->
+            <!--<publish_wheel_tf>true</publish_wheel_tf>-->
 
         </plugin>
     </gazebo>
+
 
 
 
