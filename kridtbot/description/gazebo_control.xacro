@@ -30,7 +30,7 @@
             <max_linear_acceleration>0.5</max_linear acceleration> <!-- !!!! change in urdf !!!! -->
 
             <!-- Output -->
-            <cmd_vel_topic>cmd_vel</cmd_vel_topic>
+            <cmd_vel_topic>cmd_vel</cmd_vel_topic> 
             <tf_topic>/tf</tf_topic>
             <odom_topic>odom</odom_topic>
             <frame_id>odom</frame_id>
