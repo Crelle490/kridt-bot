@@ -39,8 +39,8 @@ def generate_launch_description():
     # Launch Gazebo with World
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
-                )]),launch_arguments={'gz_args': ['-r -v4', world], 'on_exit_shutdown': 'true'}'.items()
+                    get_package_share_directory('sros_gz_sim'), 'launch', 'gz_sim.launch.py'
+                )]),launch_arguments={'gz_args': ['-r -v4', world], 'on_exit_shutdown': 'true'}.items()
              )
 
 
