@@ -3,7 +3,7 @@
 
 <!-- From video about gz update-->
 
-  <world name="empty">
+  <world name="world">
 
     <physics name ="1ms" type="igonred">
       <max_step_size>0.001</max_step_size>
