@@ -20,8 +20,9 @@
 
 
     <!-- Gazebo ros2_control plugins-->
+    <!-- https://gazebosim.org/docs/harmonic/migrating_gazebo_classic_ros2_packages/ -->
     <gazebo>
-        <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+        <plugin name="gazebo_2w_diff" filename="libgazebo_ros_diff_drive.so">
             
             <!-- Properties-->
             <wheelSeparation>0.068185"</wheelSeparation>  <!-- [m] from SW -->
@@ -34,18 +35,11 @@
             <max_acceleration>0.5</max_acceleration> <!-- !!!! CHANGE !!!! -->
 
             <!-- Output -->
-            <cmd_vel_topic>cmd_vel</cmd_vel_topic>
-            <tf_topic>/tf</tf_topic>
-            <odom_topic>odom</odom_topic>
-            <frame_id>odom</frame_id>
-            <child_frame_id>base_link</child_frame_id>
-            <odom_publisher_frequency>30</odom_publisher_frequency>
-
-            <!--<odometry_frame>odom</odometry_frame>-->
-            <!--<robot_base_frame>base_link</robot_base_frame>-->
-            <!--<publish_odom>true</publish_odom>-->
-            <!--<publish_odom_tf>true</publish_odom_tf>-->
-            <!--<publish_wheel_tf>true</publish_wheel_tf>-->
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_link</robot_base_frame>
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
 
         </plugin>
     </gazebo>
