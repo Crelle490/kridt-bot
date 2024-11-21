@@ -27,7 +27,7 @@
 
             <!-- Limits -->
             <!--<max_wheel_torque>10.0</max_wheel_torque> --><!-- !!!! change in urdf effort limit !!!! -->
-            <max_linear_acceleration>0.5</max_linear acceleration> <!-- !!!! change in urdf !!!! -->
+            <max_linear_acceleration>0.5</max_linear_acceleration> <!-- !!!! change in urdf !!!! -->
 
             <!-- Output -->
             <cmd_vel_topic>cmd_vel</cmd_vel_topic> 
