@@ -26,6 +26,9 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
+
+
+
     #### Launch 2: Launch Gazebo and run
     # Find world file
     default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'empty.world')
@@ -37,19 +40,23 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
-                )]),launch_arguments={'gz_args': ['-r ']}.items() # -r run sim, supply path to world file
+                )]),launch_arguments={'gz_args': ['-r -v4', world], 'on_exit_shutdown': 'true'}'.items() # -r run sim, verbose, supply path to world file
              )
+
+
+
 
     #### Launch 3: Spawn the robot in Gazebo
     spawn_entity = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch', 'gz_spawn_model.launch.py'
-                )]),launch_arguments={'world':'empty', 'topic':'robot_description', 'name': 'kridt_bot', 'x': '5.0', 'y': '5.0', 'z': '0.5'}.items()
+                )]),launch_arguments={'topic':'robot_description', 'name': 'kridt_bot', 'x': '5.0', 'y': '5.0', 'z': '0.5'}.items()
              )
 
     # Launch all
     return LaunchDescription([
         rsp,
         gazebo,
+        world_arg,
         spawn_entity,
     ])
