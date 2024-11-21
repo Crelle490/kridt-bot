@@ -3,9 +3,25 @@
 <!-- Inspired from: https://www.youtube.com/watch?v=IjFcr5r0nMs&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=3-->
  
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Joint State Publisher -->
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <ros>
+                <remapping>~/out:=joint_states</remapping>
+            </ros>
+
+            <update_rate>100</update_rate>
+            <joint_name>left_rear_lin_to_left_rear_rev</joint_name>
+            <joint_name>right_rear_lin_to_right_rear_re</joint_name>
+
+            <!-- Add the other joints -->
+        </plugin>
+
+
     <!-- Gazebo ros2_control plugins-->
     <gazebo>
-        <plugin name="gz::sim::v8::systems::DiffDrive" filename="gz-sim-diff-drive-system">
+        <plugin name="gazebo_2w_diff" filename="libgazebo_ros_diff_drive.so">
             
             <!-- Properties-->
             <wheelSeparation>0.068185"</wheelSeparation>  <!-- [m] from SW -->
