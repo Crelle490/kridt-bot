@@ -3,26 +3,21 @@
 <!-- Inspired from: https://www.youtube.com/watch?v=IjFcr5r0nMs&list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&index=3-->
  
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!-- Variables -->
-    <xacro:property name="d_wheel" value="$0.0163" /> <!-- [m] from urdf -->
-    <xacro:property name="wheelSeparation" value="$0.068185" /> <!-- [m] from SW -->
-
-
     <!-- Gazebo ros2_control plugins-->
     <gazebo>
         <plugin name="gz::sim::v8::systems::DiffDrive" filename="gz-sim-diff-drive-system">
             
             <!-- Properties-->
-            <wheelSeparation>wheelSeparation</wheelSeparation>
-            <wheelDiameter>d_wheel</wheelDiameter>
+            <wheelSeparation>0.068185"</wheelSeparation>  <!-- [m] from SW -->
+            <wheelDiameter>0.0163</wheelDiameter> <!-- [m] from urdf -->
             <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
-            <right_joint>right_rear_lin_to_right_rear_rev</right_joint>
+            <right_joint>right_rear_lin_to_right_rear_re</right_joint>
 
             <!-- Limits -->
-            <max_wheel_torque>100.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
-            <max_acceleration>5</max_acceleration> <!-- !!!! CHANGE !!!! -->
+            <max_wheel_torque>10.0</max_wheel_torque> <!-- !!!! CHANGE !!!! -->
+            <max_acceleration>0.5</max_acceleration> <!-- !!!! CHANGE !!!! -->
 
-            <!-- Odometry -->
+            <!-- Output -->
             <odometry_frame>odom</odometry_frame>
             <robot_base_frame>base_link</robot_base_frame>
             <publish_odom>true</publish_odom>
