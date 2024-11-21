@@ -16,7 +16,7 @@
   <!-- ________BASE LINK___________-->
 
   <link name="base_link">
-
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </link>
 
   <joint name="base_to_chassis" type="fixed">
