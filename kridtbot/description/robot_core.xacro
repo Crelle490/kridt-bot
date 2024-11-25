@@ -58,11 +58,11 @@
       <inertia ixx="0.52" ixy=" 0.00" ixz="0.00" iyy="0.48" iyz=" 0.04" izz="0.60"/>
     </inertial>
 
-    <gazebo reference="chassis_link">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-
   </link> 
+
+  <gazebo reference="chassis_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
     <!-- _____________BASE TO CHASSIS JOINT____________-->
   <joint name="chassis_to_diff" type="fixed">
@@ -84,17 +84,23 @@
       <material name = "black"/>
     </visual>
 
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/diff_link.STL"/>
+      </geometry>
+      <material name="mesh_color"/>
+    </collision>
+
     <inertial>
       <mass value="1.44"/>
       <inertia ixx="2024193.31e-9" ixy="258.53e-9" ixz="-42.56e-9" iyy="1553917.67e-9" iyz=" 559.93e-9" izz="1298088.14e-9"/>
     </inertial>
-
-    <gazebo reference="diff_link">
-
-    </gazebo>
-  
   </link>
 
+  <gazebo reference="diff_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
   <!-- _____________DIFF TO LEFT DIFF JOINT____________-->
   <joint name="diff_to_left_diff" type="revolute">
     <origin xyz="0 0 -0.28" rpy="-3.1416 0 -3.1416"/>
