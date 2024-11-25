@@ -6,44 +6,8 @@
 
     <!-- Joint State Publisher -->
     <gazebo>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
 
-            <topic>joint_states</topic>
-            <joint_name>left_rear_lin_to_left_rear_rev</joint_name>
-            <joint_name>right_rear_lin_to_right_rear_rev</joint_name>
 
-            <!-- Add the other joints -->
-        </plugin>
-
-    <!-- Gazebo ros2_control plugins-->
-    <!-- https://gazebosim.org/docs/harmonic/migrating_gazebo_classic_ros2_packages/ -->
-        <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDriveSystem">
-            
-            <!-- Properties-->
-            <wheel_seperation>0.068185"</wheel_seperation>  <!-- [m] from SW -->
-            <wheel_radius>0.0815</wheel_radius> <!-- [m] from urdf -->
-            <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
-            <right_joint>right_rear_lin_to_right_rear_re</right_joint>
-
-            <!-- Limits -->
-            <!--<max_wheel_torque>10.0</max_wheel_torque> --><!-- !!!! change in urdf effort limit !!!! -->
-            <max_linear_acceleration>0.5</max_linear_acceleration> <!-- !!!! change in urdf !!!! -->
-
-            <!-- Output -->
-            <cmd_vel_topic>cmd_vel</cmd_vel_topic> 
-            <tf_topic>/tf</tf_topic>
-            <odom_topic>odom</odom_topic>
-            <frame_id>odom</frame_id>
-            <child_frame_id>base_link</child_frame_id>
-            <odom_publisher_frequency>30</odom_publisher_frequency>
-
-            <!--<odometry_frame>odom</odometry_frame>-->
-            <!--<robot_base_frame>base_link</robot_base_frame>-->
-            <!--<publish_odom>true</publish_odom>-->
-            <!--<publish_odom_tf>true</publish_odom_tf>-->
-            <!--<publish_wheel_tf>true</publish_wheel_tf>-->
-
-        </plugin>
     </gazebo>
 
 
