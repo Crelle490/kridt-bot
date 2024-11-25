@@ -16,7 +16,16 @@
   <!-- ________BASE LINK__________-->
 
   <link name="base_link">
+  </link>
+
+
+  <joint name="base_footprint_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+  </joint>
+
+  <link name="base_footprint">
   </link>
 
   <joint name="base_to_chassis" type="fixed">
