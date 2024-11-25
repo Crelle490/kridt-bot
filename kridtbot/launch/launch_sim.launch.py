@@ -74,6 +74,5 @@ def generate_launch_description():
         world_arg,
         gazebo,
         spawn_entity,
-        ros_gz_bridge,
-        diff_drive_spawner
+        ros_gz_bridge
     ])
