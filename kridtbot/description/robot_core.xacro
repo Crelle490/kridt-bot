@@ -13,7 +13,7 @@
   <color rgba="${0/255} ${0/255} ${255/255} 0.6" /> 
 </material>
   
-  <!-- ________BASE LINK__________
+  <!-- ________BASE LINK__________-->
 
   <link name="base_link">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -24,10 +24,9 @@
     <parent link="base_link"/>
     <child link="chassis_link"/>
   </joint>
-_ -->
 
   <!-- _____________CHASSIS LINK_____________-->
-  <link name="base_link">
+  <link name="chassis_link">
 
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -50,7 +49,7 @@ _ -->
       <inertia ixx="0.52" ixy=" 0.00" ixz="0.00" iyy="0.48" iyz=" 0.04" izz="0.60"/>
     </inertial>
 
-    <gazebo reference="base_link">
+    <gazebo reference="chassis_link">
       <material>Gazebo/Orange</material>
     </gazebo>
 
@@ -59,7 +58,7 @@ _ -->
     <!-- _____________BASE TO CHASSIS JOINT____________-->
   <joint name="chassis_to_diff" type="fixed">
     <origin xyz="-0.00062572 0.016893 -0.01406" rpy="1.5708 0 -1.5708"/>
-    <parent link="base_link"/>
+    <parent link="chassis_link"/>
     <child link="diff_link"/>
   </joint>
 
