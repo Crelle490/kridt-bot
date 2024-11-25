@@ -67,11 +67,19 @@ def generate_launch_description():
         ]
     )
 
+
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
+
     # Launch all
     return LaunchDescription([
         rsp,
         world_arg,
         gazebo,
         spawn_entity,
-        ros_gz_bridge
+        ros_gz_bridge,
+        diff_drive_spawner
     ])
