@@ -305,6 +305,7 @@
       <limit effort="1000" lower="-1.5708" upper="1.5708" velocity="10"/>
       <parent link="diff_link"/>
       <child link="right_diff_link"/>
+      <mimic joint="diff_to_left_diff" multiplier="-1"/>
     </joint>
   
     <!-- _____________RIGHT DIFF LINK____________-->
