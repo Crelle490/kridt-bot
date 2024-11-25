@@ -58,11 +58,11 @@
       <inertia ixx="0.52" ixy=" 0.00" ixz="0.00" iyy="0.48" iyz=" 0.04" izz="0.60"/>
     </inertial>
 
-    <gazebo reference="chassis_link">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-
   </link> 
+
+  <gazebo reference="chassis_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
     <!-- _____________BASE TO CHASSIS JOINT____________-->
   <joint name="chassis_to_diff" type="fixed">
@@ -84,16 +84,23 @@
       <material name = "black"/>
     </visual>
 
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/diff_link.STL"/>
+      </geometry>
+      <material name="mesh_color"/>
+    </collision>
+
     <inertial>
       <mass value="1.44"/>
       <inertia ixx="2024193.31e-9" ixy="258.53e-9" ixz="-42.56e-9" iyy="1553917.67e-9" iyz=" 559.93e-9" izz="1298088.14e-9"/>
     </inertial>
-
-    <gazebo reference="diff_link">
-
-    </gazebo>
-  
   </link>
+
+  <gazebo reference="diff_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
   <!-- _____________DIFF TO LEFT DIFF JOINT____________-->
   <joint name="diff_to_left_diff" type="revolute">
@@ -128,11 +135,12 @@
       <inertia ixx="133810302.00e-9" ixy="35430.13e-9" ixz="356.93e-9" iyy="282054578.10e-9" iyz="-2296.44e-9" izz="397598064.18e-9"/>
     </inertial>
 
-    <gazebo reference="left_diff_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
 
   </link>
+
+  <gazebo reference="left_diff_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
 
   <!-- _____________LEFT DIFF TO LEFT REAR LIN JOINT____________-->
   <joint name="left_diff_to_left_rear_lin" type="prismatic">
@@ -167,11 +175,11 @@
       <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
     </inertial>
 
-    <gazebo reference="left_rear_lin_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
-
   </link>
+
+  <gazebo reference="left_rear_lin_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
 
 <!-- _____________LEFT REAR LIN TO LEFT REAR REV JOINT____________-->
   <joint name="left_rear_lin_to_left_rear_rev" type="continuous">
@@ -205,12 +213,12 @@
       <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
     </inertial>
 
-    <gazebo reference="left_rear_rev_link">
-      <material>Gazebo/Orange</material>
-    </gazebo>
-
 
   </link>
+
+  <gazebo reference="left_rear_rev_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
     <!-- _____________LEFT DIFF TO LEFT FRONT LIN JOINT____________-->
   <joint name="left_diff_to_left_front_lin" type="prismatic">
@@ -245,11 +253,11 @@
       <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
     </inertial>
 
-    <gazebo reference="left_front_lin_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
-
   </link>
+
+  <gazebo reference="left_front_lin_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
 
 <!-- _____________LEFT FRONT LIN TO LEFT FRONT REV JOINT____________-->
   <joint name="left_front_lin_to_left_front_rev" type="continuous">
@@ -322,13 +330,13 @@
       <mass value="7.30200"/>
       <inertia ixx="133810688.94e-9" ixy="319399.82e-9" ixz="2255.98e-9" iyy="282053860.06e-9" iyz="-558.22e-9" izz="397597733.07e-9"/>
     </inertial>
-  
-    <gazebo reference="right_diff_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
 
   
     </link>
+
+    <gazebo reference="right_diff_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
   
     <!-- _____________RIGHT DIFF TO RIGHT REAR LIN JOINT____________-->
     <joint name="right_diff_to_right_rear_lin" type="prismatic">
@@ -362,12 +370,12 @@
       <mass value="1.04456"/>
       <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
     </inertial>
+  
+    </link>
 
     <gazebo reference="right_rear_lin_link">
       <material>Gazebo/Black</material>
     </gazebo>
-  
-    </link>
   
   <!-- _____________RIGHT REAR LIN TO RIGHT REAR REV JOINT____________-->
     <joint name="right_rear_lin_to_right_rear_rev" type="continuous">
@@ -400,12 +408,12 @@
       <mass value="1.01100"/>
       <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
     </inertial>
+  
+    </link>
 
     <gazebo reference="right_rear_rev_link">
       <material>Gazebo/Orange</material>
     </gazebo>
-  
-    </link>
   
       <!-- _____________RIGHT DIFF TO RIGHT FRONT LIN JOINT____________-->
     <joint name="right_diff_to_right_front_lin" type="prismatic">
@@ -439,12 +447,12 @@
       <mass value="1.04456"/>
       <inertia ixx="59743728.97e-9" ixy="-5941.33e-9" ixz="293509.06e-9" iyy="59856745.28e-9" iyz=" -1015856.43e-9" izz="595093.96e-9"/>
     </inertial>
+  
+    </link>
 
     <gazebo reference="right_front_lin_link">
       <material>Gazebo/Black</material>
     </gazebo>
-  
-    </link>
   
   <!-- _____________RIGHT FRONT LIN TO RIGHT FRONT REV JOINT____________-->
     <joint name="right_front_lin_to_right_front_rev" type="continuous">
@@ -477,12 +485,10 @@
       <mass value="1.01100"/>
       <inertia ixx="5844491.97e-9" ixy="-376.28e-9" ixz="-3671.08e-9" iyy="5842839.83e-9" iyz="-796.72e-9" izz="3646247.90e-9"/>
     </inertial>
+    </link>
 
     <gazebo reference="right_front_rev_link">
       <material>Gazebo/Orange</material>
     </gazebo>
-  
-  
-    </link>
 
 </robot>
