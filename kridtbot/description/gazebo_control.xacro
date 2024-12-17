@@ -7,8 +7,12 @@
             <!-- Wheel Information -->
             <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
             <right_joint>right_rear_lin_to_right_rear_rev</right_joint>
-            <wheel_seperation>0.068185"</wheel_seperation>  <!-- [m] from SW -->
-            <wheel_radius>0.0815</wheel_radius> <!-- [m] from urdf -->
+
+            <!-- [m] from SW -->
+            <wheel_seperation>0.068185"</wheel_seperation>
+
+            <!-- [m] from urdf -->
+            <wheel_radius>0.0815</wheel_radius>
 
 
             <!-- Limits -->
