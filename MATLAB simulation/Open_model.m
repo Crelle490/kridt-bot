@@ -11,6 +11,6 @@
     angle. This can be observed by running the simulation.
 %}
 load("Wheel\wheel_point_cloud.mat")
-load("Surface\grid_surface.mat")
-%open("Simscape_simulation_of_rover.slx")
+%load("Surface\grid_surface.mat")
+open("Simscape_simulation_of_rover.slx")
 
