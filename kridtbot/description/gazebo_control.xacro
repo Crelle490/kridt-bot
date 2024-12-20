@@ -16,7 +16,6 @@
 
 
             <!-- Limits -->
-            <max_wheel_torque>200</max_wheel_torque>
             <max_linear_acceleration>0.33</max_linear_acceleration>
 
             <!-- Input -->
