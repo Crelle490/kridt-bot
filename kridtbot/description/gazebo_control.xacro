@@ -16,7 +16,7 @@
 
 
             <!-- Limits -->
-            <!-- <max_wheel_torque>200</max_wheel_torque> -->
+            <max_wheel_torque>200</max_wheel_torque>
             <max_linear_acceleration>0.33</max_linear_acceleration>
 
             <!-- Input -->
@@ -28,7 +28,8 @@
             <child_frame_id>base_link</child_frame_id>
             <odom_topic>odom</odom_topic>
             <odom_publisher_frequency>30</odom_publisher_frequency>
-            <tf_topic>/tf</tf_topic>
+            
+            <tf_topic>tf</tf_topic>
 
         </plugin>
 

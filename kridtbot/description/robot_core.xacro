@@ -102,8 +102,6 @@
 
   <gazebo reference="diff_link">
     <material>Gazebo/Orange</material>
-    <mu1 value = "0.3"/>
-    <mu2 value = "0.3"/>
   </gazebo>
 
   <!-- _____________DIFF TO LEFT DIFF JOINT____________-->
@@ -299,6 +297,8 @@
 
     <gazebo reference="left_front_rev_link">
       <material>Gazebo/Orange</material>
+      <mu1 value = "0.001"/>
+      <mu2 value = "0.001"/>
     </gazebo>
 
 
@@ -498,6 +498,8 @@
 
     <gazebo reference="right_front_rev_link">
       <material>Gazebo/Orange</material>
+      <mu1 value = "0.001"/>
+      <mu2 value = "0.001"/>
     </gazebo>
 
 </robot>
