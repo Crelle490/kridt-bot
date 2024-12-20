@@ -31,7 +31,8 @@ def generate_launch_description():
     default_world = os.path.join(
         get_package_share_directory(package_name),
         'worlds',
-        'empty.world'
+        'empty.world',
+        '--physics-engien gz-physics-bullet-featherstone-plugin'
         )    
     
     world = LaunchConfiguration('world')
@@ -41,7 +42,6 @@ def generate_launch_description():
         default_value=default_world,
         description='World to load'
         )
-
     # Include the Gazebo launch file, provided by the ros_gz_sim package
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
