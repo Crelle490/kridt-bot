@@ -1,0 +1,9 @@
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/uninstall.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/kridtbot_uninstall.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/test.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/edit_cache.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/rebuild_cache.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/list_install_components.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/install.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/install/local.dir
+/home/christian/dev_ws/src/kridt-bot/build/kridtbot/CMakeFiles/install/strip.dir
