@@ -43,10 +43,13 @@ def generate_launch_description():
         )
     # Include the Gazebo launch file, provided by the ros_gz_sim package
     gazebo = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
-                    launch_arguments={ 'gz_args': ['--physics-engine', 'gz-physics-bullet-featherstone-plugin', '-r', '-v4', world], 'on_exit_shutdown': 'true'}.items()
-             )
+    PythonLaunchDescriptionSource([os.path.join(
+        get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
+    launch_arguments={
+        'gz_args': ['--physics-engine', 'gz-physics-bullet-featherstone-plugin', '-r', '-v4', world],
+        'on_exit_shutdown': 'true'
+    }.items()
+    )   
 
     # Run the spawner node from the ros_gz_sim package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='ros_gz_sim', executable='create',
