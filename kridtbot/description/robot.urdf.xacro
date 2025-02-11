@@ -5,6 +5,10 @@
     <xacro:include filename="robot_core.xacro" />
 
     <!-- Gazebo ros2_control plugins-->
-    <xacro:include filename="gazebo_control.xacro" />
+    <!--<xacro:include filename="gazebo_control.xacro" /> -->
+
+    <!-- ROS2 Control plugins-->
+    <xacro:include filename="ros2_control.xacro" />
+
 
 </robot> 
