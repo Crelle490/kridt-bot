@@ -76,7 +76,7 @@ def generate_launch_description():
     #    package="controller_manager",
     #    executable="spawner.py",
     #    arguments=["joint_broad"],
-    )
+    #)
 
 
     # Launch all
