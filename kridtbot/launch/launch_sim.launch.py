@@ -66,6 +66,19 @@ def generate_launch_description():
         ]
     )
 
+    ### NOT UPDATED TO HARMONIC!! 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["joint_broad"],
+    )
+
 
     # Launch all
     return LaunchDescription([
@@ -73,5 +86,8 @@ def generate_launch_description():
         world_arg,
         gazebo,
         spawn_entity,
-        ros_gz_bridge
+        ros_gz_bridge,
+
+        diff_drive_spawner,
+        joint_broad_spawner
     ])

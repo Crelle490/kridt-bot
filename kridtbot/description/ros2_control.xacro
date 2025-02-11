@@ -6,9 +6,7 @@
 
         <!-- Hardware interface for GZ-->
         <hardware>
-            <plugin name="gazebo_ros2_control/GazeboSystem">
-            
-            </plugin>
+            <plugin name="gazebo_ros2_control/GazeboSimSystem"> </plugin>
         </hardware>
 
         <!-- All continous joints-->
@@ -74,7 +72,7 @@
 
         <!-- GZ plugin -->
         <gazebo>
-            <plugin name="gazebo_ros2_control" filename="gz-sim-diff-drive-system"> <!-- UPDATE NEW GZ !!!!-->
+            <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
                 <parameters>$(find kridtbot)/config/my_controllers.yaml </parameters>
             </plugin>   
         </gazebo>

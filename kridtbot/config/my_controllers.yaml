@@ -24,7 +24,7 @@ diff_cont:
     wheel_separation: 0.068185 # from SW 
     wheel_radius: 0.0815
 
-    use_stamped_vel: false
+    # use_stamped_vel: false # NOT in use anymore
 
     # open_loop: false    
 
