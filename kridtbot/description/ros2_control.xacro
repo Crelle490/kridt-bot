@@ -73,8 +73,8 @@
         <!-- GZ plugin -->
         <gazebo>
             <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
-                <!--<parameters>$(find kridtbot)/config/my_controllers.yaml </parameters>-->
-                <parameters>filename="file:$(find kridtbot)/config/my_controllers.yaml"</parameters>
+                <parameters>$(find kridtbot)/config/my_controllers.yaml </parameters>
+                <!--<parameters>filename="file:$(find kridtbot)/config/my_controllers.yaml"</parameters>-->
             </plugin>   
         </gazebo>
     
