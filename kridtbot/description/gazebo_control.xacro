@@ -5,8 +5,8 @@
         <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
 
             <!-- Wheel Information -->
-            <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
-            <right_joint>right_rear_lin_to_right_rear_rev</right_joint>
+            <left_joint>left_rear_wheel</left_joint>
+            <right_joint>right_rear_wheel</right_joint>
 
             <!-- [m] from SW -->
             <wheel_seperation>0.068185</wheel_seperation>
@@ -36,8 +36,8 @@
         <plugin filename="gz-sim-joint-state-publisher-system"
             name="gz::sim::systems::JointStatePublisher">
             <topic>joint_states</topic>
-            <joint_name>left_rear_lin_to_left_rear_rev</joint_name>
-            <joint_name>right_rear_lin_to_right_rear_rev</joint_name>
+            <joint_name>left_rear_wheel</joint_name>
+            <joint_name>right_rear_wheel</joint_name>
         </plugin>
 
     </gazebo>

@@ -19,8 +19,8 @@ diff_cont:
 
     base_frame_id: base_link
 
-    left_wheel_names: ['left_rear_lin_to_left_rear_rev', 'left_front_lin_to_left_front_rev']
-    right_wheel_names: ['right_rear_lin_to_right_rear_rev', 'right_front_lin_to_right_front_rev']
+    left_wheel_names: ['left_rear_wheel', 'left_front_wheel']
+    right_wheel_names: ['right_rear_wheel', 'right_front_wheel']
     wheel_separation: 0.068185 # from SW 
     wheel_radius: 0.0815
 

@@ -8,7 +8,7 @@
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
       <engine>
-        <filename>bullet-featherstone</filename>
+        <filename>gz-physics-bullet-featherstone-plugin</filename>
       </engine>
     </plugin>
     <plugin

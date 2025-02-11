@@ -105,7 +105,7 @@
   </gazebo>
 
   <!-- _____________DIFF TO LEFT DIFF JOINT____________-->
-  <joint name="diff_to_left_diff" type="revolute">
+  <joint name="left_diff" type="revolute"> <!--diff_to_left_diff-->
     <origin xyz="0 0 -0.28" rpy="-3.1416 0 -3.1416"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000" lower="-1.5708" upper="1.5708" velocity="10"/>
@@ -147,7 +147,7 @@
   </gazebo>
 
   <!-- _____________LEFT DIFF TO LEFT REAR LIN JOINT____________-->
-  <joint name="left_diff_to_left_rear_lin" type="prismatic">
+  <joint name="left_rear_linear" type="prismatic"> <!-- left_diff_to_left_rear_lin -->
     <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
     <origin xyz="-0.216 -0.0010724 0" rpy="-1.5708 0 0.0049647"/>
     <axis xyz="0 0 1"/>
@@ -186,7 +186,7 @@
   </gazebo>
 
 <!-- _____________LEFT REAR LIN TO LEFT REAR REV JOINT____________-->
-  <joint name="left_rear_lin_to_left_rear_rev" type="continuous">
+  <joint name="left_rear_wheel" type="continuous"> <!-- left_rear_lin_to_left_rear_rev -->
     <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
     <axis xyz="0 0 1"/>
     <parent link="left_rear_lin_link"/>
@@ -225,7 +225,7 @@
   </gazebo>
 
     <!-- _____________LEFT DIFF TO LEFT FRONT LIN JOINT____________-->
-  <joint name="left_diff_to_left_front_lin" type="prismatic">
+  <joint name="left_front_linear" type="prismatic"> <!-- left_diff_to_left_front_lin-->
     <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
     <origin xyz="0.216 0.0010724 0" rpy="-1.5708 0 0.0049647"/>
     <axis xyz="0 0 1"/>
@@ -264,7 +264,7 @@
   </gazebo>
 
 <!-- _____________LEFT FRONT LIN TO LEFT FRONT REV JOINT____________-->
-  <joint name="left_front_lin_to_left_front_rev" type="continuous">
+  <joint name="left_front_wheel" type="continuous"> <!-- left_front_lin_to_left_front_rev -->
     <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
     <axis xyz="0 0 1"/>
     <parent link="left_front_lin_link"/>
@@ -297,21 +297,21 @@
 
     <gazebo reference="left_front_rev_link">
       <material>Gazebo/Orange</material>
-      <mu1 value = "0.001"/>
-      <mu2 value = "0.001"/>
+      <mu1 value = "0.5"/>
+      <mu2 value = "0.5"/>
     </gazebo>
 
 
   </link>
 
     <!-- _____________DIFF TO RIGHT DIFF JOINT____________-->
-    <joint name="diff_to_right_diff" type="revolute">
+    <joint name="right_diff" type="revolute"> <!-- diff_to_right_diff -->
       <origin xyz="0 0 0.28" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000" lower="-1.5708" upper="1.5708" velocity="10"/>
       <parent link="diff_link"/>
       <child link="right_diff_link"/>
-      <mimic joint="diff_to_left_diff" multiplier="1"/>
+      <mimic joint="left_diff" multiplier="1"/>
     </joint>
   
     <!-- _____________RIGHT DIFF LINK____________-->
@@ -348,7 +348,7 @@
     </gazebo>
   
     <!-- _____________RIGHT DIFF TO RIGHT REAR LIN JOINT____________-->
-    <joint name="right_diff_to_right_rear_lin" type="prismatic">
+    <joint name="right_rear_linear" type="prismatic"> <!-- right_diff_to_right_rear_lin -->
       <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
       <origin xyz="-0.216 -0.0010724 0" rpy="-1.5708 0 0.0049647"/>
       <axis xyz="0 0 1"/>
@@ -387,7 +387,7 @@
     </gazebo>
   
   <!-- _____________RIGHT REAR LIN TO RIGHT REAR REV JOINT____________-->
-    <joint name="right_rear_lin_to_right_rear_rev" type="continuous">
+    <joint name="right_rear_wheel" type="continuous"> <!-- right_rear_lin_to_right_rear_rev -->
       <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
       <axis xyz="0 0 1"/>
       <parent link="right_rear_lin_link"/>
@@ -425,7 +425,7 @@
     </gazebo>
   
       <!-- _____________RIGHT DIFF TO RIGHT FRONT LIN JOINT____________-->
-    <joint name="right_diff_to_right_front_lin" type="prismatic">
+    <joint name="right_front_linear" type="prismatic"> <!-- right_diff_to_right_front_lin -->
       <limit effort="1000.0" lower="0" upper="0.13" velocity="0.5"/>
       <origin xyz="0.216 0.0010724 0" rpy="-1.5708 0 0.0049647"/>
       <axis xyz="0 0 1"/>
@@ -464,7 +464,7 @@
     </gazebo>
   
   <!-- _____________RIGHT FRONT LIN TO RIGHT FRONT REV JOINT____________-->
-    <joint name="right_front_lin_to_right_front_rev" type="continuous">
+    <joint name="right_front_wheel" type="continuous"> <!-- right_front_lin_to_right_front_rev -->
       <origin xyz="0.0012158 0 0.2449" rpy="1.5708 0 0"/>
       <axis xyz="0 0 1"/>
       <parent link="right_front_lin_link"/>
@@ -498,8 +498,8 @@
 
     <gazebo reference="right_front_rev_link">
       <material>Gazebo/Orange</material>
-      <mu1 value = "0.001"/>
-      <mu2 value = "0.001"/>
+      <mu1 value = "0.5"/>
+      <mu2 value = "0.5"/>
     </gazebo>
 
 </robot>

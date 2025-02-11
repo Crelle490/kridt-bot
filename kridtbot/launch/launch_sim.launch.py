@@ -67,17 +67,17 @@ def generate_launch_description():
         ]
     )
 
-    #diff_drive_spawner = Node(
-    #    package="controller_manager",
-    #    executable="spawner",
-    #    arguments=["diff_cont"],
-    #)
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
 
-    #joint_broad_spawner = Node(
-    #    package="controller_manager",
-    #    executable="spawner",
-    #    arguments=["joint_broad"],
-    #)
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
 
 
     # Launch all
@@ -87,6 +87,6 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         ros_gz_bridge,
-        #diff_drive_spawner,
-        #joint_broad_spawner
+        diff_drive_spawner,
+        joint_broad_spawner
     ])

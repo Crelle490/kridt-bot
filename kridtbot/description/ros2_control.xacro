@@ -10,7 +10,7 @@
         </hardware>
 
         <!-- All continous joints-->
-        <joint name="left_rear_lin_to_left_rear_rev">
+        <joint name="left_rear_wheel">
             <command_interface name="velocity">
                 <param name="min">-10</param>
                 <param name="max">10</param>
@@ -25,7 +25,7 @@
             <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->
         </joint>
 
-        <joint name="right_rear_lin_to_right_rear_rev">
+        <joint name="right_rear_wheel">
             <command_interface name="velocity">
                 <param name="min">-10</param>
                 <param name="max">10</param>
@@ -40,7 +40,7 @@
             <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->
         </joint>
 
-        <joint name="left_front_lin_to_left_front_rev">
+        <joint name="left_front_wheel">
             <command_interface name="velocity">
                 <param name="min">-10</param>
                 <param name="max">10</param>
@@ -55,7 +55,7 @@
             <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->   
         </joint>
 
-        <joint name="right_front_lin_to_right_front_rev">
+        <joint name="right_front_wheel">
             <command_interface name="velocity">
                 <param name="min">-10</param>
                 <param name="max">10</param>
@@ -75,8 +75,9 @@
         <!-- GZ plugin -->
     <gazebo>
         <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
-            <!--<parameters>$(find kridtbot)/config/my_controllers.yaml </parameters> -->
-            <parameters>filename="file:$(find kridtbot)/config/my_controllers.yaml"</parameters>
+            <parameters>$(find kridtbot)/config/mycontrollers.yaml</parameters>
+            <!--<parameters filename="file:$(find kridtbot)/config/my_controllers.yaml"/> -->
+            <!--<parameters>filename="file:$(find kridtbot)/config/my_controllers.yaml"</parameters> -->
         </plugin>   
     </gazebo>
     
