@@ -35,9 +35,13 @@
 
   <!-- _____________DIFF TO IMU JOINT____________-->
   <joint name="diff_to_imu" type="fixed">
-    <origin xyz="-0.038 0 0" rpy="1.57079633 0 1.57079633"/>
+    <origin xyz="-1.0 0 0" rpy="1.57079633 0 1.57079633"/>
     <parent link="diff_link"/>
     <child link="imu_link"/>
   </joint>
+
+  <gazebo reference="imu_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
 
 </robot>
