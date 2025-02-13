@@ -107,7 +107,7 @@
   <link name="imu_link">
 
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-1.0 0 0" rpy="1.57079633 0 1.57079633"/>
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/imu_link.STL"/>
       </geometry>
@@ -115,7 +115,7 @@
     </visual>
 
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-1.0 0 0" rpy="1.57079633 0 1.57079633"/>
       <geometry>
         <mesh filename="file:$(find kridtbot)/meshes/imu_link.STL"/>
       </geometry>
