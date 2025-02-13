@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- ROS2 Control plugin for Gazebo-->
+    <ros2_control name="GazeboSystem" type="system">
+
+        <!-- Hardware interface for GZ-->
+        <hardware>
+            <plugin name="gazebo_ros2_control/GazeboSimSystem"> </plugin>
+        </hardware>
+
+        <!-- All continous joints-->
+        <joint name="left_rear_wheel">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!--<command_interface name="position"></command_interface> -->
+            <!--<command_interface name="effort"></command_interface> -->
+            <!--<command_interface name="voltage"></command_interface>--> <!-- Not sure if this is needed-->   
+
+            <state_interface name="position"></state_interface>
+            <state_interface name="velocity"></state_interface>
+            <!--<state_interface name="current"></state_interface> --><!-- Not sure if this is needed -->
+            <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->
+        </joint>
+
+        <joint name="right_rear_wheel">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!--<command_interface name="position"></command_interface> -->
+            <!--<command_interface name="effort"></command_interface> -->
+            <!--<command_interface name="voltage"></command_interface>--> <!-- Not sure if this is needed-->   
+
+            <state_interface name="position"></state_interface>
+            <state_interface name="velocity"></state_interface>
+            <!--<state_interface name="current"></state_interface> --><!-- Not sure if this is needed -->
+            <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->
+        </joint>
+
+        <joint name="left_front_wheel">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!--<command_interface name="position"></command_interface> -->
+            <!--<command_interface name="effort"></command_interface> -->
+            <!--<command_interface name="voltage"></command_interface>--> <!-- Not sure if this is needed-->   
+
+            <state_interface name="position"></state_interface>
+            <state_interface name="velocity"></state_interface>
+            <!--<state_interface name="current"></state_interface> --><!-- Not sure if this is needed -->
+            <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->   
+        </joint>
+
+        <joint name="right_front_wheel">
+            <command_interface name="velocity">
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!--<command_interface name="position"></command_interface> -->
+            <!--<command_interface name="effort"></command_interface> -->
+            <!--<command_interface name="voltage"></command_interface>--> <!-- Not sure if this is needed-->   
+
+            <state_interface name="position"></state_interface>
+            <state_interface name="velocity"></state_interface>
+            <!--<state_interface name="current"></state_interface> --><!-- Not sure if this is needed -->
+            <!--<state_interface name="voltage"></state_interface> --><!-- Not sure if this is needed -->
+        </joint>
+
+    </ros2_control>
+
+        <!-- GZ plugin -->
+    <gazebo>
+        <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
+            <parameters>$(find kridtbot)/config/mycontrollers.yaml</parameters>
+            <!--<parameters filename="file:$(find kridtbot)/config/my_controllers.yaml"/> -->
+            <!--<parameters>filename="file:$(find kridtbot)/config/my_controllers.yaml"</parameters> -->
+        </plugin>   
+    </gazebo>
+    
+
+
+</robot>

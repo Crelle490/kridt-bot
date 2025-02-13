@@ -1,0 +1,8 @@
+source;share/kridtbot/hook/cmake_prefix_path.ps1
+source;share/kridtbot/hook/cmake_prefix_path.dsv
+source;share/kridtbot/hook/cmake_prefix_path.sh
+source;share/kridtbot/local_setup.bash
+source;share/kridtbot/local_setup.dsv
+source;share/kridtbot/local_setup.ps1
+source;share/kridtbot/local_setup.sh
+source;share/kridtbot/local_setup.zsh

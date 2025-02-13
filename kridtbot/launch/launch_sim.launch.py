@@ -41,7 +41,7 @@ def generate_launch_description():
         default_value=default_world,
         description='World to load'
         )
-
+    
     # Include the Gazebo launch file, provided by the ros_gz_sim package
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -67,6 +67,18 @@ def generate_launch_description():
         ]
     )
 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
+
 
     # Launch all
     return LaunchDescription([
@@ -74,5 +86,7 @@ def generate_launch_description():
         world_arg,
         gazebo,
         spawn_entity,
-        ros_gz_bridge
+        ros_gz_bridge,
+        diff_drive_spawner,
+        joint_broad_spawner
     ])

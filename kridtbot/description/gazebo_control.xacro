@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
     <gazebo>
         <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
 
             <!-- Wheel Information -->
-            <left_joint>left_rear_lin_to_left_rear_rev</left_joint>
-            <right_joint>right_rear_lin_to_right_rear_rev</right_joint>
+            <left_joint>left_rear_wheel</left_joint>
+            <right_joint>right_rear_wheel</right_joint>
 
             <!-- [m] from SW -->
             <wheel_seperation>0.068185</wheel_seperation>
@@ -16,7 +15,6 @@
 
 
             <!-- Limits -->
-            <!-- <max_wheel_torque>200</max_wheel_torque> -->
             <max_linear_acceleration>0.33</max_linear_acceleration>
 
             <!-- Input -->
@@ -28,7 +26,8 @@
             <child_frame_id>base_link</child_frame_id>
             <odom_topic>odom</odom_topic>
             <odom_publisher_frequency>30</odom_publisher_frequency>
-            <tf_topic>/tf</tf_topic>
+            
+            <tf_topic>tf</tf_topic>
 
         </plugin>
 
@@ -36,10 +35,10 @@
         <plugin filename="gz-sim-joint-state-publisher-system"
             name="gz::sim::systems::JointStatePublisher">
             <topic>joint_states</topic>
-            <joint_name>left_rear_lin_to_left_rear_rev</joint_name>
-            <joint_name>right_rear_lin_to_right_rear_rev</joint_name>
+            <joint_name>left_rear_wheel</joint_name>
+            <joint_name>right_rear_wheel</joint_name>
         </plugin>
-    </gazebo>
 
+    </gazebo>
 
 </robot>

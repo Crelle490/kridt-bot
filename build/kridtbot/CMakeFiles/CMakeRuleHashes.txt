@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+0de6532747675dc49dbe054c961724ae CMakeFiles/kridtbot_uninstall

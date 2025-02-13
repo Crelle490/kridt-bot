@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <material name="black">
+    <color rgba="${64/255} ${64/255} ${64/255} 1" /> 
+  </material>
+  <!-- _____________IMU LINK____________-->
+  <link name="imu_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/imu_link.STL"/>
+      </geometry>
+      <material name = "black"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:$(find kridtbot)/meshes/imu_link.STL"/>
+      </geometry>
+      <material name="mesh_color"/>
+    </collision>
+
+    <inertial>
+      <mass value="0.02302"/>
+      <inertia ixx="3763.33e-9" ixy="0" ixz="0" iyy="6942.61e-9" iyz="0" izz="9041.46e-9"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="imu_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- _____________DIFF TO IMU JOINT____________-->
+  <joint name="diff_to_imu" type="fixed">
+    <origin xyz="-0.038 0 0" rpy="1.57079633 0 1.57079633"/>
+    <parent link="diff_link"/>
+    <child link="imu_link"/>
+  </joint>
+
+</robot>
